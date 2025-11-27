@@ -1,0 +1,505 @@
+/* =========================================================================
+   BIZSCOUT LANDING PAGE STYLESHEET - CLEAN VERSION
+   ========================================================================= */
+
+/* --- 1. RESET AND BASE STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #424242;
+    --secondary-color: #28a745;
+    --text-color: #000000;
+    --background-color: #ffffff;
+    --white: #ffffff;
+    --light-grey: #f4f7f6;
+    --dark-grey: #555;
+    --border-color: #ccc;
+    --error-color: #dc3545;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--background-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- 2. TYPOGRAPHY --- */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.1rem; }
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- 3. HEADER --- */
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 2.5rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+/* --- 4. HERO SECTION --- */
+.hero-section {
+    padding: 3rem 0;
+    background-color: var(--white);
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.hero-section .subtitle {
+    font-size: 1.2rem;
+    color: var(--dark-grey);
+    max-width: 700px;
+    margin: 15px auto 0 auto;
+}
+
+/* --- 5. BEFORE & AFTER SECTION --- */
+.before-after {
+    margin: 60px 0;
+}
+
+.before-after .split-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.image-box {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+    padding: 15px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.image-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.image-box .caption {
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: var(--dark-grey);
+    line-height: 1.4;
+    padding: 0 10px;
+}
+
+.arrow-icon {
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-left: 25px solid var(--primary-color);
+    margin: 0 20px;
+    flex-shrink: 0;
+}
+
+/* --- 6. PRICING SECTION --- */
+.pricing-form-section {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-top: 40px;
+}
+
+.pricing-form-section h4 {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+
+.offer-line {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.plan-selector-label {
+    display: block;
+    text-align: center;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--dark-grey);
+    margin: 30px 0 15px 0;
+}
+
+.pricing-grid {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.tier {
+    flex: 1;
+    min-width: 240px;
+    max-width: 300px;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    text-align: center;
+    background-color: #f9fafb;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tier:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.tier h5 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.tier-features {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+    text-align: left;
+}
+
+.tier-features li {
+    padding: 6px 0 6px 25px;
+    position: relative;
+    font-size: 0.92rem;
+    line-height: 1.35;
+}
+
+.tier-features li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+/* --- 7. SIGNUP SECTION --- */
+.signup-section {
+    background-color: var(--white);
+    padding: 40px 20px;
+    margin-top: 20px;
+}
+
+.signup-section form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- 8. FORM COMPONENTS --- */
+form {
+    margin-top: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--dark-grey);
+    font-size: 1.05rem;
+}
+
+input[type="email"],
+input[type="text"],
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    background-color: #fcfcfc;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.invalid-field {
+    border-color: var(--error-color) !important;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25) !important;
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.9rem;
+    margin-top: 8px;
+    display: none;
+    text-align: center;
+}
+
+button[type="submit"] {
+    display: inline-block;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    line-height: 1.4;
+    min-width: 120px;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    width: 100%;
+    margin-top: 35px;
+    box-shadow: 0 4px 8px rgba(0,40,0,0.2);
+}
+
+button[type="submit"]:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,40,0,0.3);
+}
+
+/* --- 9. RADIO BUTTONS (VERTICAL) --- */
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.radio-group input[type="radio"] {
+    display: none;
+}
+
+.radio-group label {
+    background-color: #e0e0e0;
+    color: var(--dark-grey);
+    padding: 12px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #e0e0e0;
+    font-weight: 600;
+    text-align: center;
+    flex-grow: 1;
+    max-width: 250px;
+    white-space: nowrap;
+}
+
+.user-role-group label {
+    white-space: normal;
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.radio-group input[type="radio"]:checked + label {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+}
+
+.radio-group label:hover {
+    background-color: #d0d0d0;
+    border-color: #b0b0b0;
+}
+
+/* --- 10. RADIO BUTTONS (HORIZONTAL) --- */
+.radio-group-horizontal {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.radio-group-horizontal input[type="radio"] {
+    display: none;
+}
+
+.radio-group-horizontal label {
+    background-color: #f5f5f5;
+    border: 2px solid #e0e0e0;
+    padding: 16px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    min-width: 140px;
+    font-weight: 500;
+}
+
+.radio-group-horizontal label:hover {
+    border-color: #999;
+    background-color: #ebebeb;
+}
+
+.radio-group-horizontal input[type="radio"]:checked + label {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(31, 41, 55, 0.3);
+}
+
+.pricing-tier-group label {
+    min-width: 160px;
+}
+
+.pricing-tier-group label strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+.pricing-tier-group label small {
+    display: block;
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-top: 4px;
+}
+
+/* --- 11. FOOTER --- */
+footer {
+    background-color: #222;
+    color: #bbb;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* --- 12. RESPONSIVE STYLES --- */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 15px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.5rem; }
+
+    .before-after .split-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .arrow-icon {
+        border-left: none;
+        border-top: 25px solid var(--primary-color);
+        border-right: 25px solid transparent;
+        border-left: 25px solid transparent;
+        margin: 20px 0;
+    }
+
+    .pricing-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tier {
+        max-width: 90%;
+    }
+
+    .image-box {
+        min-width: unset;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .radio-group label {
+        max-width: 100%;
+        white-space: normal;
+        padding: 10px 15px;
+    }
+
+    button[type="submit"] {
+        font-size: 1.1rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section {
+        padding: 2rem 0;
+    }
+}

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizScout Beta - For Those Who Hunt</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    
+    <!-- VARIANT B: PHIL KNIGHT STYLE OVERRIDES -->
+    <style>
+        /* Darker, bolder header */
+        header {
+            background-color: #1a1a1a !important;
+            padding: 2rem 0 !important;
+        }
+        
+        /* Hero section - more dramatic */
+        .hero-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero-subheadline {
+            font-size: 1.15rem;
+            color: #444;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+        
+        /* Darker primary color throughout */
+        :root {
+            --primary-color: #1a1a1a;
+        }
+        
+        .radio-group-horizontal input[type="radio"]:checked + label {
+            background-color: #1a1a1a !important;
+            border-color: #1a1a1a !important;
+        }
+        
+        /* Bold, action-oriented CTA */
+        button[type="submit"] {
+            background-color: #1a1a1a !important;
+            font-size: 1.3rem !important;
+            font-weight: 700 !important;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #000000 !important;
+        }
+        
+        /* Hunter-focused tier styling */
+        .tier h5 {
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+        
+        .tier-features li:before {
+            color: #1a1a1a !important;
+        }
+        
+        /* Make pricing tiers clickable */
+        .tier {
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .tier input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+        
+        .tier input[type="radio"]:checked + .tier-content {
+            border: 3px solid #1a1a1a;
+            box-shadow: 0 4px 20px rgba(26, 26, 26, 0.4);
+        }
+        
+        .tier-content {
+            border: 3px solid transparent;
+            transition: all 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>BizScout</h1>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO: Identity-driven messaging -->
+        <section class="hero-section" style="padding: 50px 0;">
+            <div class="container">
+                <h2>For Those Who Hunt</h2>
+                <div class="image-box" style="margin-bottom: 0px;">
+                        <img src="images/Hunter.png" alt="Frustrated man sifting through listings">
+                </div>
+                <h3> While others wait for deals to find them, you track. You move first. You win.</h3>
+                <h4 style="color: #28a745; font-size: 1.2rem; margin-top: 30px;">Join now. First 100 hunters get 6 months free. No credit card.</h4>
+            </div>
+        </section>
+
+        <!-- FORM: Identity FIRST, then email -->
+        <section class="signup-section" style="padding-top: 0px; padding-bottom: 60px; margin-top: -30px;">
+            <div class="container">
+                <form id="betaSignupForm">
+                    
+                    <!-- IDENTITY FIRST (Phil Knight approach) -->
+                    <div class="form-group">
+                        <label>I hunt as</label>
+                        <div class="radio-group-horizontal" id="userRole">
+                            <input type="radio" id="roleIndividual" name="userRole" value="Individual Hunter" required>
+                            <label for="roleIndividual">Solo Hunter</label>
+
+                            <input type="radio" id="roleSearchFund" name="userRole" value="Search Fund">
+                            <label for="roleSearchFund">Search Fund</label>
+
+                            <input type="radio" id="roleMicroPE" name="userRole" value="Micro-PE">
+                            <label for="roleMicroPE">Micro-PE</label>
+
+                            <input type="radio" id="roleFamilyOffice" name="userRole" value="Family Office">
+                            <label for="roleFamilyOffice">Family Office</label>
+
+                            <input type="radio" id="roleBroker" name="userRole" value="Broker">
+                            <label for="roleBroker">Broker</label>
+                        </div>
+                        <div class="error-message" id="userRoleError"></div>
+                    </div>
+
+                    <!-- EMAIL SECOND -->
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        <div class="error-message" id="emailError"></div>
+                    </div>
+
+                    <!-- CLICKABLE PRICING TIERS (Hunter-themed names) -->
+                    <label class="plan-selector-label">Pick your commitment level</label>
+                    <div class="pricing-grid pricing-tier-selection">
+                        <label class="tier">
+                            <input type="radio" name="pricingTier" value="Tracker" required>
+                            <div class="tier-content">
+                                <h5>Tracker</h5>
+                                <ul class="tier-features">
+                                    <li>$9.99/m or $89/yr (save $30.88)</li>
+                                    <li>2 NAICS (6-digit)</li>
+                                    <li>Daily updates</li>
+                                    <li>CSV delivery</li>
+                                </ul>
+                            </div>
+                        </label>
+                        
+                        <label class="tier">
+                            <input type="radio" name="pricingTier" value="Hunter" required>
+                            <div class="tier-content">
+                                <h5>Hunter</h5>
+                                <ul class="tier-features">
+                                    <li>$19.99/m or $178/yr (save $61.88)</li>
+                                    <li>Up to 8 NAICS (6-digit)</li>
+                                    <li>2x daily updates (8:30 AM & 1:30 PM EST)</li>
+                                    <li>CSV delivery</li>
+                                </ul>
+                            </div>
+                        </label>
+                        
+                        <label class="tier">
+                            <input type="radio" name="pricingTier" value="Predator" required>
+                            <div class="tier-content">
+                                <h5>Predator</h5>
+                                <ul class="tier-features">
+                                    <li>$39.99/m or $358/yr (save $121.88)</li>
+                                    <li>Unlimited NAICS within 2 industry families</li>
+                                    <li>Daily updates</li>
+                                    <li>CSV delivery</li>
+                                </ul>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="error-message" id="pricingTierError"></div>
+
+                    <!-- INDUSTRY/NAICS -->
+                    <div class="form-group">
+                        <label for="naicsInterest">Your hunting grounds (NAICS or industries)</label>
+                        <input type="text" id="naicsInterest" name="naicsInterest" placeholder="e.g. 238220 or HVAC, 811192 or Car Washes" required>
+                        <div class="error-message" id="naicsInterestError"></div>
+                    </div>
+
+                    <!-- HOW DID YOU HEAR -->
+                    <div class="form-group">
+                        <label for="sourceChannel">How did you hear about us?</label>
+                        <select id="sourceChannel" name="sourceChannel" required>
+                            <option value="">Select</option>
+                            <option value="Searchfunder">Searchfunder</option>
+                            <option value="Reddit">Reddit</option>
+                            <option value="LinkedIn">LinkedIn</option>
+                            <option value="X/Twitter">X/Twitter</option>
+                            <option value="Email">Email</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <div class="error-message" id="sourceChannelError"></div>
+                    </div>
+
+                    <input type="hidden" id="utm_source" name="utm_source">
+                    <input type="hidden" id="utm_medium" name="utm_medium">
+                    <input type="hidden" id="utm_campaign" name="utm_campaign">
+                    <input type="hidden" id="utm_content" name="utm_content">
+                    <input type="hidden" id="variant" name="variant" value="B">
+
+                    <button type="submit">Start Hunting</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BizScout. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
